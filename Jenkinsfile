@@ -1,4 +1,4 @@
-@Library('sprints_pipeline')_
+@Library('jenkins-shared-library')_
 pipeline {
     agent any
     

@@ -10,26 +10,17 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                echo "Building project in ${params.BUILD_ENV} environment"
-           
+                building()
             }
         }
         
         stage('Test') {
-           when {
-                expression{
-                    params.test== true 
-                }
-            }
-            steps {
-                echo "Running tests"
-            }
+           testing()
         }
         
         stage('Deploy') {
             steps {
-                echo "Deploying to ${params.BUILD_ENV}"
-                echo "this build number $BUILD_NUMBER"
+               deploying()
             }
         }
     }

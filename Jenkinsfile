@@ -15,7 +15,9 @@ pipeline {
         }
         
         stage('Test') {
-           testing()
+            steps {
+                testing()
+            }
         }
         
         stage('Deploy') {
